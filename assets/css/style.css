@@ -141,8 +141,14 @@ h6 {
   color: gold;
 }
 
-.nav_link:hover:after {
+.nav_link:hover:after,
+.nav_link.active:after {
   display: block;
+  opacity: 1;
+}
+
+.nav_link.active {
+  color: gold;
 }
 
 /* Button */
@@ -160,10 +166,63 @@ h6 {
   text-decoration: none;
   text-transform: uppercase;
 
-  transition: background 0.2s linear;
+  transition: background 0.2s linear, color 0.1s;
 }
 
 .button:hover {
   color: black;
   background-color: #fff;
+}
+
+/* Slider */
+
+.intro_slider {
+  width: 100%;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.slider_inner {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.slider_item {
+  width: 23%;
+  padding: 20px 0;
+  margin-top: 60px;
+  position: relative;
+
+  border-top: 3px solid #fff;
+  opacity: 0.7;
+
+  font-size: 18px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.slider_item.active {
+  opacity: 1;
+}
+
+.slider_item.active:before {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  top: -3px;
+  left: 0;
+  z-index: 0;
+
+  position: absolute;
+  background-color: #f38181;
+}
+
+.slider_number {
+  font-size: 24px;
+  font-weight: 700;
 }
