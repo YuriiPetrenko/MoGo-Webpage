@@ -245,6 +245,7 @@ hr {
 
 .section--devices {
   padding-bottom: 0;
+  margin-bottom: 100px;
 
   background: url(/assets/images/background_device_02.jpg) center no-repeat;
   background-size: cover;
@@ -417,6 +418,80 @@ hr {
 .devices {
   width: 100%;
   max-width: 600px;
+  position: relative;
 
   margin: 0 auto;
+}
+
+.devices_item {
+  display: block;
+}
+
+.devices_item--iphone {
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  bottom: -80px;
+}
+
+/* We do */
+
+.wedo {
+  display: flex;
+}
+
+.wedo_item {
+  width: 50%;
+}
+
+/* Accordion */
+.accordion {
+  border: 1px solid #e5e5e5;
+}
+
+.accordion_header {
+  padding: 15px 20px 15px 65px;
+  position: relative;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.accordion_header:after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+
+  border-top: 2px solid #ccc;
+  border-right: 2px solid #ccc;
+
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  z-index: 1;
+
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.accordion_icon {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  z-index: 1;
+
+  transform: translateY(-50%);
+}
+
+.accordion_content {
+  padding: 15px 20px;
+
+  color: #999;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.accordion_title {
+  font-size: 14px;
+  color: #333;
+  text-transform: uppercase;
 }
