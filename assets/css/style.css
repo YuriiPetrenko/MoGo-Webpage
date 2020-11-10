@@ -302,8 +302,11 @@ hr {
 
 .card_item {
   width: 380px;
-  position: relative;
+}
+
+.card_inner {
   background-color: #95e1d3;
+  position: relative;
 }
 
 .card_item:hover .card_image {
@@ -593,3 +596,32 @@ hr {
 }
 
 /* Social */
+
+.social {
+  display: flex;
+  justify-content: center;
+}
+
+.social_item {
+  padding: 12px;
+  width: 55px;
+  height: 55px;
+  background-color: #fce38a;
+  border-right: 1px solid #f38181;
+  text-decoration: none;
+
+  font-size: 30px;
+  color: #f38181;
+  line-height: 1;
+
+  transition: background 0.2s linear, color 0.2s linear;
+}
+
+.social_item:last-child {
+  border-right: 1px solid #f38181;
+}
+
+.social_item:hover {
+  background-color: #f38181;
+  color: #fff;
+}
