@@ -495,7 +495,7 @@ hr {
   position: relative;
   border-bottom: 1px solid transparent;
 
-  cursor: ;
+  cursor: pointer;
 }
 
 .accordion_header:after {
@@ -651,4 +651,5 @@ hr {
 .logos {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
