@@ -240,7 +240,8 @@ hr {
 /* Section */
 
 .section {
-  padding: 80px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .section--devices {
@@ -253,6 +254,11 @@ hr {
 
 .section--gray {
   background-color: #f8f8f8;
+}
+
+.section--clients {
+  background: url(/assets/images/clients-bg.jpg) center no-repeat;
+  background-size: cover;
 }
 
 .section_header {
@@ -547,7 +553,7 @@ hr {
 }
 
 .reviews_item {
-  padding: 0 22px 0 220px;
+  padding: 0 22px 0 255px;
   position: relative;
 }
 
@@ -558,6 +564,7 @@ hr {
   z-index: 1;
 
   border: 2px solid #95e1d3;
+  border-radius: 50%;
 }
 
 .reviews_text {
@@ -652,4 +659,128 @@ hr {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/* Works */
+
+.works {
+  display: flex;
+
+  margin-bottom: -80px;
+}
+
+.works_col {
+  flex: 1 1 0;
+}
+
+.works_item {
+  position: relative;
+  background: linear-gradient(to bottom, #f38181, #fce38a);
+}
+
+.works_img {
+  max-width: 100%;
+  height: auto;
+
+  transition: opacity 0.2s linear;
+  display: block;
+}
+
+.works_item:hover .works_img {
+  opacity: 0.1;
+}
+
+.works_item:hover .works_info {
+  opacity: 1;
+}
+
+.works_info {
+  width: 100%;
+  padding: 0 15px;
+
+  text-align: center;
+  color: #fff;
+
+  opacity: 0;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+
+  transform: translateY(-50%);
+  transition: opacity 0.2s linear;
+}
+
+.works_title {
+  margin-bottom: 5px;
+
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.works_text {
+  font-size: 15px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Clients */
+.clients {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.clients_item {
+  margin-bottom: 60px;
+  margin-top: 70px;
+
+  width: 50%;
+
+  padding: 0 45px 0 175px;
+  position: relative;
+}
+
+.clients_photo {
+  width: 110px;
+  height: 110px;
+
+  border-radius: 50%;
+
+  top: 0;
+  left: 40px;
+  z-index: 1;
+  position: absolute;
+}
+
+.clients_name {
+  margin-bottom: 5px;
+
+  font-size: 14px;
+  color: #333;
+
+  text-transform: uppercase;
+}
+
+.clients_prof {
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 300;
+  color: #333;
+}
+
+.clients_text {
+  color: #999;
+  font-size: 15px;
+}
+
+.clients_text:before {
+  margin: 15px 0;
+
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+
+  background-color: #f38181;
 }
