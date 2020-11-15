@@ -31,6 +31,12 @@ hr {
   border: 0;
 }
 
+/* Page */
+
+.page {
+  overflow: hidden;
+}
+
 /* Container */
 .container {
   width: 100%;
@@ -241,8 +247,7 @@ hr {
 /* Section */
 
 .section {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding: 80px 0;
 }
 
 .section--devices {
@@ -582,11 +587,16 @@ hr {
 }
 
 .reviews_item {
-  padding: 0 22px 0 255px;
+  padding-left: 255px;
   position: relative;
 }
 
 .reviews_photo {
+  display: block;
+
+  width: 210px;
+  height: 210px;
+
   position: absolute;
   top: 0;
   left: 0;
@@ -598,6 +608,7 @@ hr {
 
 .reviews_text {
   margin-bottom: 15px;
+
   font-size: 24px;
   font-style: italic;
   font-weight: 300;
@@ -686,8 +697,19 @@ hr {
 
 .logos {
   display: flex;
+  margin: 0 -15px;
   justify-content: space-between;
   align-items: center;
+}
+
+.logos_item {
+  padding: 0 15px;
+}
+
+.logos_img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 /* Works */
@@ -818,6 +840,7 @@ hr {
 
 .blog {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -946,6 +969,10 @@ hr {
   background-color: #f8f8f8;
 }
 
+.footer_col {
+  padding: 0 15px;
+}
+
 .footer_col--first {
   width: 40%;
 }
@@ -960,7 +987,9 @@ hr {
 
 .footer_inner {
   padding-bottom: 60px;
+  margin: 0 -15px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -1128,12 +1157,14 @@ hr {
 }
 
 .instagram_item {
-  width: 32.333%;
+  width: 33%;
   border-bottom: 1px solid #fff;
 }
 
 .instagram_item img {
   display: block;
+  min-width: 100%;
+  height: auto;
 }
 
 /* Copyright */
@@ -1151,6 +1182,8 @@ hr {
   color: #f38181;
 }
 
+/* ============================================== */
+
 /*Laptop or PC monitor*/
 @media (max-width: 1230px) {
   /* Intro */
@@ -1161,6 +1194,12 @@ hr {
 
   .intro_subtitle {
     font-size: 50px;
+  }
+
+  /* Reviews */
+
+  .reviews_text {
+    font-size: 20px;
   }
 }
 
@@ -1200,6 +1239,58 @@ hr {
 
   .services_item--border {
     border-bottom: 0;
+  }
+
+  /* Reviews */
+
+  .reviews {
+    padding: 0 60px;
+  }
+
+  .reviews_photo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .reviews_item {
+    padding-left: 175px;
+  }
+
+  /* Works */
+
+  /* Clients */
+
+  .clients {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .clients_item {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 0;
+  }
+
+  /* Footer */
+
+  .footer_col--first {
+    width: 100%;
+  }
+
+  .footer_col--second,
+  .footer_col--third {
+    width: 50%;
+  }
+
+  /* Instagram */
+
+  .instagram {
+    justify-content: flex-start;
+  }
+
+  .instagram_item {
+    width: auto;
+    border-right: 1px solid white;
   }
 }
 
@@ -1267,6 +1358,66 @@ hr {
   .wedo_item {
     width: 100%;
   }
+
+  /* Reviews */
+
+  .reviews_photo {
+    position: static;
+    margin: 0 auto 20px;
+  }
+
+  .reviews_item {
+    padding-left: 0;
+  }
+
+  .reviews_text {
+    font-size: 16px;
+  }
+
+  .reviews_author {
+    font-size: 20px;
+  }
+
+  /* Works */
+
+  .works {
+    flex-wrap: wrap;
+  }
+
+  .works_col {
+    flex: none;
+    width: 50%;
+  }
+
+  /* Clients */
+
+  .clients_item {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  /* Blog */
+
+  .blog {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .blog_item {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .blog_item:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Footer */
+
+  .footer_col--second,
+  .footer_col--third {
+    width: 100%;
+  }
 }
 
 /*Mobile devices*/
@@ -1321,5 +1472,79 @@ hr {
     width: 180px;
     right: -80px;
     bottom: -50px;
+  }
+
+  /* Reviews */
+
+  .reviews {
+    padding: 0;
+  }
+
+  .reviews_btn {
+    top: 18%;
+  }
+
+  /* Logos */
+
+  .logos {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logos_item {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+
+  .logos_img {
+    margin: 0 auto;
+  }
+
+  /* Works */
+
+  .works_col {
+    width: 100%;
+  }
+
+  /* Clients */
+
+  .clients_photo {
+    position: static;
+  }
+
+  .clients_item {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .clients_text:before {
+    margin: 15px auto;
+  }
+
+  /* blogs */
+
+  .blogs_img {
+    width: 80px;
+    height: 50px;
+  }
+
+  .blogs_title {
+    font-size: 10px;
+  }
+
+  /* subscribe */
+  .subscribe {
+    flex-wrap: wrap;
+    max-width: none;
+  }
+
+  .subscribe_input {
+    margin-bottom: 10px;
+    border-right: 1px solid #e7e7e7;
+  }
+
+  .subscribe_input,
+  .subscribe_btn {
+    width: 100%;
   }
 }
