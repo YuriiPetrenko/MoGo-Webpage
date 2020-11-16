@@ -609,8 +609,8 @@ hr {
 
 /* Accordion */
 .accordion_item {
-  border: 1px solid #e5e5e5;
   margin-bottom: 10px;
+  border: 1px solid #e5e5e5;
 }
 
 .accordion_item.active .accordion_content {
@@ -629,8 +629,8 @@ hr {
 .accordion_header {
   padding: 15px 20px 15px 65px;
   position: relative;
-  border-bottom: 1px solid transparent;
 
+  border-bottom: 1px solid transparent;
   cursor: pointer;
 }
 
@@ -662,9 +662,10 @@ hr {
 
 .accordion_content {
   padding: 15px 20px;
+  display: none;
 
-  color: #999;
   font-size: 15px;
+  color: #999;
   font-style: italic;
   font-weight: 300;
 }
@@ -678,28 +679,31 @@ hr {
 /* Reviews */
 
 .reviews {
-  padding: 0 110px;
   position: relative;
 }
 
+.reviews .slick-slider {
+  padding: 0 110px;
+}
+
 .reviews_item {
+  min-height: 210px;
   padding-left: 255px;
   position: relative;
 }
 
 .reviews_photo {
   display: block;
-
   width: 210px;
   height: 210px;
+
+  border: 2px solid #95e1d3;
+  border-radius: 50%;
 
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
-
-  border: 2px solid #95e1d3;
-  border-radius: 50%;
 }
 
 .reviews_text {
@@ -720,25 +724,35 @@ hr {
 .reviews_author:before {
   content: "";
   display: inline-block;
+  vertical-align: middle;
+  width: 60px;
+  height: 3px;
   margin-right: 10px;
 
-  vertical-align: middle;
-  width: 100%;
-  max-width: 60px;
-  height: 3px;
   background-color: #f38181;
 }
 
-.reviews_btn {
+.slick-arrow {
+  display: block;
   font-size: 0;
   color: transparent;
 
+  border: 0;
+  background: none;
+  cursor: pointer;
+
   position: absolute;
   top: 50%;
+  z-index: 1;
   transform: translateY(-50%);
 }
 
-.reviews_btn:after {
+.slick-arrow,
+.slick-slide:focus {
+  outline: 0;
+}
+
+.slick-arrow:after {
   content: "";
   display: block;
   width: 16px;
@@ -748,12 +762,13 @@ hr {
   border-left: 2px solid #ccc;
 }
 
-.reviews_btn--prev {
+.slick-prev {
   left: 0;
   transform: rotate(-45deg);
 }
 
-.reviews_btn--next {
+.reviews_btn--next,
+.slick-next {
   right: 0;
   transform: rotate(135deg);
 }
@@ -1339,7 +1354,7 @@ hr {
 
   /* Reviews */
 
-  .reviews {
+  .reviews .slick-slider {
     padding: 0 60px;
   }
 
@@ -1609,11 +1624,11 @@ hr {
 
   /* Reviews */
 
-  .reviews {
+  .reviews .slick-slider {
     padding: 0;
   }
 
-  .reviews_btn {
+  .slick-arrow {
     top: 18%;
   }
 
