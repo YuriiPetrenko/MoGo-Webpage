@@ -53,6 +53,9 @@ hr {
   justify-content: center;
   width: 100%;
   height: 100vh;
+  min-height: 820px;
+
+  position: relative;
   background: url("../images/intro.jpg") center no-repeat;
   background-size: cover;
 }
@@ -105,6 +108,22 @@ hr {
   left: 0;
   right: 0;
   z-index: 1000;
+}
+
+.header.fixed {
+  background-color: #eb8b8d;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  transform: translate3d(0, 0, 0);
+}
+
+.header.active {
+  background-color: #eb8b8d;
 }
 
 .header_inner {
@@ -166,6 +185,78 @@ hr {
 
 .nav_link.active {
   color: gold;
+}
+
+/* Nav toggle */
+
+.nav-toggle {
+  display: none;
+  width: 30px;
+  padding: 10px 0;
+  font-size: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+
+  color: transparent;
+
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 1;
+}
+
+.nav-toggle_item {
+  display: block;
+  width: 100%;
+  height: 3px;
+
+  background-color: #fff;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+
+  transition: background 0.2s linear;
+}
+
+.nav-toggle.active .nav-toggle_item {
+  background: none;
+}
+
+.nav-toggle_item:before,
+.nav-toggle_item:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+
+  position: absolute;
+  left: 0;
+  z-index: 1;
+
+  transition: transform 0.2s linear;
+}
+
+.nav-toggle_item:before {
+  top: -8px;
+}
+
+.nav-toggle_item:after {
+  bottom: -8px;
+}
+
+.nav-toggle.active .nav-toggle_item:before {
+  transform-origin: left top;
+  transform: rotate(45deg) translate3D(0, -2px, 0);
+}
+
+.nav-toggle.active .nav-toggle_item:after {
+  transform-origin: left bottom;
+  transform: rotate(-45deg) translate3D(0, 3px, 0);
 }
 
 /* Button */
@@ -1295,9 +1386,39 @@ hr {
 }
 
 @media (max-width: 770px) {
+  /* Intro */
+
+  .intro {
+    min-height: 650px;
+  }
+
+  /* Header */
+
+  .header {
+    padding: 10px 0;
+  }
+
   /* Nav */
   .nav {
     display: none;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+
+    background-color: #eb8b8d;
+  }
+
+  .nav_link {
+    display: block;
+    margin: 0;
+    padding: 8px 20px;
+  }
+
+  /* nav toggle */
+
+  .nav-toggle {
+    display: block;
   }
 
   /* Section */
@@ -1382,6 +1503,7 @@ hr {
 
   .works {
     flex-wrap: wrap;
+    margin-bottom: auto;
   }
 
   .works_col {
@@ -1422,6 +1544,8 @@ hr {
 
 /*Mobile devices*/
 @media (max-width: 575px) {
+  /* Intro */
+
   .intro_title {
     font-size: 45px;
   }
